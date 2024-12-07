@@ -1,6 +1,7 @@
 enum RouterEnum {
   home(path: 'home'),
-  history(path: 'history');
+  history(path: 'history'),
+  scanDetail(path: 'scan-detail');
 
   final String path;
 

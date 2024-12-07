@@ -15,14 +15,3 @@ For help getting started with Flutter development, view the
 [online documentation](https://docs.flutter.dev/), which offers tutorials,
 samples, guidance on mobile development, and a full API reference.
 
-
-TODO :
-
-1 - home page with scanner (permission, error, loading)
-2 - result page with details
-3 - history page with list of scans
-4 - app icon and launch screen
-5 - themes
-6 - add tutorial with lottie animation
-7 - unit tests
-8 - update README (explain architecture, packages...)

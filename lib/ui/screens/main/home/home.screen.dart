@@ -37,7 +37,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text('QRCode Scanner'),
+        title: Text(LocaleKeys.qrCodeScanner.tr()),
       ),
       body: SafeArea(
         child: Column(

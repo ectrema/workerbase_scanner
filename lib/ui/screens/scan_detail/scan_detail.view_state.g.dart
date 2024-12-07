@@ -1,0 +1,56 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+part of 'scan_detail.view_state.dart';
+
+// **************************************************************************
+// CopyWithGenerator
+// **************************************************************************
+
+abstract class _$ScanDetailStateCWProxy {
+  ScanDetailState qrCode(String? qrCode);
+
+  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `ScanDetailState(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
+  ///
+  /// Usage
+  /// ```dart
+  /// ScanDetailState(...).copyWith(id: 12, name: "My name")
+  /// ````
+  ScanDetailState call({
+    String? qrCode,
+  });
+}
+
+/// Proxy class for `copyWith` functionality. This is a callable class and can be used as follows: `instanceOfScanDetailState.copyWith(...)`. Additionally contains functions for specific fields e.g. `instanceOfScanDetailState.copyWith.fieldName(...)`
+class _$ScanDetailStateCWProxyImpl implements _$ScanDetailStateCWProxy {
+  const _$ScanDetailStateCWProxyImpl(this._value);
+
+  final ScanDetailState _value;
+
+  @override
+  ScanDetailState qrCode(String? qrCode) => this(qrCode: qrCode);
+
+  @override
+
+  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `ScanDetailState(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
+  ///
+  /// Usage
+  /// ```dart
+  /// ScanDetailState(...).copyWith(id: 12, name: "My name")
+  /// ````
+  ScanDetailState call({
+    Object? qrCode = const $CopyWithPlaceholder(),
+  }) {
+    return ScanDetailState(
+      qrCode: qrCode == const $CopyWithPlaceholder()
+          ? _value.qrCode
+          // ignore: cast_nullable_to_non_nullable
+          : qrCode as String?,
+    );
+  }
+}
+
+extension $ScanDetailStateCopyWith on ScanDetailState {
+  /// Returns a callable class that can be used as follows: `instanceOfScanDetailState.copyWith(...)` or like so:`instanceOfScanDetailState.copyWith.fieldName(...)`.
+  // ignore: library_private_types_in_public_api
+  _$ScanDetailStateCWProxy get copyWith => _$ScanDetailStateCWProxyImpl(this);
+}

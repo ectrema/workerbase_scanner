@@ -4,6 +4,7 @@ import 'package:workerbase_scanner/core/enums/router.enum.dart';
 import 'package:workerbase_scanner/ui/screens/main/history/history.screen.dart';
 import 'package:workerbase_scanner/ui/screens/main/home/home.screen.dart';
 import 'package:workerbase_scanner/ui/screens/main/main.screen.dart';
+import 'package:workerbase_scanner/ui/screens/scan_detail/scan_detail.screen.dart';
 
 export 'package:workerbase_scanner/core/enums/router.enum.dart';
 
@@ -40,6 +41,12 @@ final GoRouter router = GoRouter(
           ],
         ),
       ],
+    ),
+    GoRoute(
+      path: RouterEnum.scanDetail.navigation,
+      builder: (_, GoRouterState state) => ScanDetailScreen(
+        qrCode: state.extra as String,
+      ),
     ),
   ],
 );

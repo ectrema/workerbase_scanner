@@ -4,6 +4,7 @@ import 'package:flutter/widgets.dart';
 import 'package:mobile_scanner/mobile_scanner.dart';
 import 'package:open_settings_plus/core/open_settings_plus.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
+import 'package:workerbase_scanner/core/routing/app_router.dart';
 import 'package:workerbase_scanner/ui/screens/main/home/home.view_state.dart';
 
 part 'home.view_model.g.dart';
@@ -39,7 +40,17 @@ class HomeViewModel extends _$HomeViewModel {
     state = state.copyWith(cameraEnabled: controller.value.hasCameraPermission);
   }
 
-  void onScan(BarcodeCapture barcode) {}
+  Future<void> onScan(BarcodeCapture barcode) async {
+    if (barcode.barcodes.isEmpty) return;
+
+    final Barcode scannedBarcode = barcode.barcodes.first;
+    await controller.stop();
+    await router.push(
+      RouterEnum.scanDetail.navigation,
+      extra: scannedBarcode.rawValue,
+    );
+    await controller.start();
+  }
 
   Future<void> requestCameraPermission() async {
     switch (OpenSettingsPlus.shared) {
