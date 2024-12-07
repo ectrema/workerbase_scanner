@@ -7,7 +7,7 @@ part of 'history.view_state.dart';
 // **************************************************************************
 
 abstract class _$HistoryStateCWProxy {
-  HistoryState loading(bool loading);
+  HistoryState savedQrCodes(List<QrCodeEntity> savedQrCodes);
 
   /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `HistoryState(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
   ///
@@ -16,7 +16,7 @@ abstract class _$HistoryStateCWProxy {
   /// HistoryState(...).copyWith(id: 12, name: "My name")
   /// ````
   HistoryState call({
-    bool loading,
+    List<QrCodeEntity> savedQrCodes,
   });
 }
 
@@ -27,7 +27,8 @@ class _$HistoryStateCWProxyImpl implements _$HistoryStateCWProxy {
   final HistoryState _value;
 
   @override
-  HistoryState loading(bool loading) => this(loading: loading);
+  HistoryState savedQrCodes(List<QrCodeEntity> savedQrCodes) =>
+      this(savedQrCodes: savedQrCodes);
 
   @override
 
@@ -38,13 +39,13 @@ class _$HistoryStateCWProxyImpl implements _$HistoryStateCWProxy {
   /// HistoryState(...).copyWith(id: 12, name: "My name")
   /// ````
   HistoryState call({
-    Object? loading = const $CopyWithPlaceholder(),
+    Object? savedQrCodes = const $CopyWithPlaceholder(),
   }) {
     return HistoryState(
-      loading: loading == const $CopyWithPlaceholder()
-          ? _value.loading
+      savedQrCodes: savedQrCodes == const $CopyWithPlaceholder()
+          ? _value.savedQrCodes
           // ignore: cast_nullable_to_non_nullable
-          : loading as bool,
+          : savedQrCodes as List<QrCodeEntity>,
     );
   }
 }

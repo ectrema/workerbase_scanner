@@ -4,7 +4,10 @@ import 'package:flutter/widgets.dart';
 import 'package:mobile_scanner/mobile_scanner.dart';
 import 'package:open_settings_plus/core/open_settings_plus.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
+import 'package:workerbase_scanner/core/providers/initializer.dart';
 import 'package:workerbase_scanner/core/routing/app_router.dart';
+import 'package:workerbase_scanner/domain/entities/qr_code.entity.dart';
+import 'package:workerbase_scanner/domain/services/qr_code.service.dart';
 import 'package:workerbase_scanner/ui/screens/main/home/home.view_state.dart';
 
 part 'home.view_model.g.dart';
@@ -15,12 +18,18 @@ class HomeViewModel extends _$HomeViewModel {
 
   StreamSubscription<Object?>? _subscription;
 
+  final QrCodeService _qrCodeService;
+
   factory HomeViewModel() {
-    return HomeViewModel._();
+    return HomeViewModel._(
+      qrCodeService: injector<QrCodeService>(),
+    );
   }
 
-  HomeViewModel._()
-      : controller = MobileScannerController(
+  HomeViewModel._({
+    required QrCodeService qrCodeService,
+  })  : _qrCodeService = qrCodeService,
+        controller = MobileScannerController(
           detectionSpeed: DetectionSpeed.noDuplicates,
           autoStart: false,
         );
@@ -36,18 +45,26 @@ class HomeViewModel extends _$HomeViewModel {
       );
     }
 
-    _subscription = controller.barcodes.listen(onScan);
+    _subscription = controller.barcodes.listen(_onScan);
     state = state.copyWith(cameraEnabled: controller.value.hasCameraPermission);
   }
 
-  Future<void> onScan(BarcodeCapture barcode) async {
+  Future<void> _onScan(BarcodeCapture barcode) async {
     if (barcode.barcodes.isEmpty) return;
-
     final Barcode scannedBarcode = barcode.barcodes.first;
+
+    if (scannedBarcode.rawValue == null) return;
+
+    final QrCodeEntity qrCode = QrCodeEntity(
+      qrCode: scannedBarcode.rawValue!,
+      date: DateTime.now(),
+    );
+
+    await _qrCodeService.saveQrCode(qrCode);
     await controller.stop();
     await router.push(
       RouterEnum.scanDetail.navigation,
-      extra: scannedBarcode.rawValue,
+      extra: qrCode,
     );
     await controller.start();
   }

@@ -1,11 +1,10 @@
 import 'package:riverpod_annotation/riverpod_annotation.dart';
+import 'package:workerbase_scanner/domain/entities/qr_code.entity.dart';
 import 'package:workerbase_scanner/ui/screens/scan_detail/scan_detail.view_state.dart';
 
 part 'scan_detail.view_model.g.dart';
 
-///
 /// [ScanDetailViewModel]
-///
 @riverpod
 class ScanDetailViewModel extends _$ScanDetailViewModel {
   factory ScanDetailViewModel() {
@@ -17,7 +16,7 @@ class ScanDetailViewModel extends _$ScanDetailViewModel {
   @override
   ScanDetailState build() => ScanDetailState.initial();
 
-  Future<void> init(String qrCode) async {
+  Future<void> init(QrCodeEntity qrCode) async {
     state = state.copyWith(qrCode: qrCode);
   }
 }

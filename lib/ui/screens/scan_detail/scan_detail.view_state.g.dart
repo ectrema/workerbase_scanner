@@ -7,7 +7,7 @@ part of 'scan_detail.view_state.dart';
 // **************************************************************************
 
 abstract class _$ScanDetailStateCWProxy {
-  ScanDetailState qrCode(String? qrCode);
+  ScanDetailState qrCode(QrCodeEntity? qrCode);
 
   /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `ScanDetailState(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
   ///
@@ -16,7 +16,7 @@ abstract class _$ScanDetailStateCWProxy {
   /// ScanDetailState(...).copyWith(id: 12, name: "My name")
   /// ````
   ScanDetailState call({
-    String? qrCode,
+    QrCodeEntity? qrCode,
   });
 }
 
@@ -27,7 +27,7 @@ class _$ScanDetailStateCWProxyImpl implements _$ScanDetailStateCWProxy {
   final ScanDetailState _value;
 
   @override
-  ScanDetailState qrCode(String? qrCode) => this(qrCode: qrCode);
+  ScanDetailState qrCode(QrCodeEntity? qrCode) => this(qrCode: qrCode);
 
   @override
 
@@ -44,7 +44,7 @@ class _$ScanDetailStateCWProxyImpl implements _$ScanDetailStateCWProxy {
       qrCode: qrCode == const $CopyWithPlaceholder()
           ? _value.qrCode
           // ignore: cast_nullable_to_non_nullable
-          : qrCode as String?,
+          : qrCode as QrCodeEntity?,
     );
   }
 }

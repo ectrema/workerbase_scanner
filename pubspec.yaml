@@ -50,6 +50,8 @@ dependencies:
   # utils
   equatable: 2.0.5
   copy_with_extension: 6.0.0
+  path_provider: ^2.1.5
+  path: 1.9.0
 
   # database
   sembast: 3.8.0+1
@@ -64,6 +66,10 @@ dependencies:
   # settings
   open_settings_plus: 0.4.0
 
+  # json
+  json_annotation: 4.9.0
+  collection: ^1.18.0
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -76,6 +82,7 @@ dev_dependencies:
   flutter_lints: 5.0.0
   build_runner: 2.4.13
   injectable_generator: 2.6.2
+  json_serializable: 6.9.0
   copy_with_extension_gen: 6.0.0
   riverpod_lint: 2.6.3
   riverpod_generator: 2.6.3

@@ -7,7 +7,7 @@ part of 'scan_detail.view_model.dart';
 // **************************************************************************
 
 String _$scanDetailViewModelHash() =>
-    r'1d65707537fdd3c3c9d847c935efd9a72e6ccf1d';
+    r'19352e97c0970865de805693d23cb023d62e1966';
 
 ///
 /// [ScanDetailViewModel]

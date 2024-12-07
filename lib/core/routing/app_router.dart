@@ -1,6 +1,7 @@
 import 'package:flutter/widgets.dart';
 import 'package:go_router/go_router.dart';
 import 'package:workerbase_scanner/core/enums/router.enum.dart';
+import 'package:workerbase_scanner/domain/entities/qr_code.entity.dart';
 import 'package:workerbase_scanner/ui/screens/main/history/history.screen.dart';
 import 'package:workerbase_scanner/ui/screens/main/home/home.screen.dart';
 import 'package:workerbase_scanner/ui/screens/main/main.screen.dart';
@@ -45,7 +46,7 @@ final GoRouter router = GoRouter(
     GoRoute(
       path: RouterEnum.scanDetail.navigation,
       builder: (_, GoRouterState state) => ScanDetailScreen(
-        qrCode: state.extra as String,
+        qrCode: state.extra as QrCodeEntity,
       ),
     ),
   ],

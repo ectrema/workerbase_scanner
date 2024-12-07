@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:get_it/get_it.dart';
 import 'package:workerbase_scanner/core/localizations/localizations.dart';
+import 'package:workerbase_scanner/core/providers/initializer.dart';
 import 'package:workerbase_scanner/core/routing/app_router.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  // Initialize translations
+  final GetIt getIt = await initializeInjections();
+  await getIt.allReady();
   await EasyLocalization.ensureInitialized();
   runApp(const MyApp());
 }

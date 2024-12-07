@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:workerbase_scanner/core/localizations/localizations.dart';
+import 'package:workerbase_scanner/domain/entities/qr_code.entity.dart';
 import 'package:workerbase_scanner/ui/screens/scan_detail/scan_detail.view_model.dart';
 import 'package:workerbase_scanner/ui/screens/scan_detail/scan_detail.view_state.dart';
 
 class ScanDetailScreen extends ConsumerStatefulWidget {
-  final String qrCode;
+  final QrCodeEntity qrCode;
 
   const ScanDetailScreen({super.key, required this.qrCode});
 
@@ -39,7 +40,7 @@ class _ScanDetailBody extends ConsumerState<ScanDetailScreen> {
               padding: const EdgeInsets.only(left: 16),
               child: SafeArea(
                 child: Center(
-                  child: Text(state.qrCode!),
+                  child: Text(state.qrCode!.qrCode),
                 ),
               ),
             ),
