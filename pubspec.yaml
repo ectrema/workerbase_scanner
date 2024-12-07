@@ -57,6 +57,13 @@ dependencies:
   # language
   easy_localization: 3.0.7
 
+
+  # camera
+  mobile_scanner: 6.0.2
+  
+  # settings
+  open_settings_plus: 0.4.0
+
 dev_dependencies:
   flutter_test:
     sdk: flutter

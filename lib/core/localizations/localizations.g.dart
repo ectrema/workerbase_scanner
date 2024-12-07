@@ -16,7 +16,8 @@ class CodegenLoader extends AssetLoader{
 
   static const Map<String,dynamic> en = {
   "home": "Home",
-  "history": "History"
+  "history": "History",
+  "cameraPermissionNotGranted": "Camera permission not granted, click here to request access"
 };
 static const Map<String, Map<String,dynamic>> mapLocales = {"en": en};
 }

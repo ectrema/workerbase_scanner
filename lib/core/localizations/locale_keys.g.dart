@@ -3,5 +3,6 @@
 abstract class  LocaleKeys {
   static const home = 'home';
   static const history = 'history';
+  static const cameraPermissionNotGranted = 'cameraPermissionNotGranted';
 
 }

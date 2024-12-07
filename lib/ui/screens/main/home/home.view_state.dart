@@ -5,12 +5,12 @@ part 'home.view_state.g.dart';
 
 @CopyWith()
 class HomeState extends ViewStateAbs {
-  final bool loading;
+  final bool cameraEnabled;
 
-  const HomeState({required this.loading}) : super();
+  const HomeState({required this.cameraEnabled}) : super();
 
-  HomeState.initial() : loading = false;
+  HomeState.initial() : cameraEnabled = false;
 
   @override
-  List<Object?> get props => <Object?>[loading];
+  List<Object?> get props => <Object?>[cameraEnabled];
 }

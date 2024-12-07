@@ -7,7 +7,7 @@ part of 'home.view_state.dart';
 // **************************************************************************
 
 abstract class _$HomeStateCWProxy {
-  HomeState loading(bool loading);
+  HomeState cameraEnabled(bool cameraEnabled);
 
   /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `HomeState(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
   ///
@@ -16,7 +16,7 @@ abstract class _$HomeStateCWProxy {
   /// HomeState(...).copyWith(id: 12, name: "My name")
   /// ````
   HomeState call({
-    bool loading,
+    bool cameraEnabled,
   });
 }
 
@@ -27,7 +27,8 @@ class _$HomeStateCWProxyImpl implements _$HomeStateCWProxy {
   final HomeState _value;
 
   @override
-  HomeState loading(bool loading) => this(loading: loading);
+  HomeState cameraEnabled(bool cameraEnabled) =>
+      this(cameraEnabled: cameraEnabled);
 
   @override
 
@@ -38,13 +39,13 @@ class _$HomeStateCWProxyImpl implements _$HomeStateCWProxy {
   /// HomeState(...).copyWith(id: 12, name: "My name")
   /// ````
   HomeState call({
-    Object? loading = const $CopyWithPlaceholder(),
+    Object? cameraEnabled = const $CopyWithPlaceholder(),
   }) {
     return HomeState(
-      loading: loading == const $CopyWithPlaceholder()
-          ? _value.loading
+      cameraEnabled: cameraEnabled == const $CopyWithPlaceholder()
+          ? _value.cameraEnabled
           // ignore: cast_nullable_to_non_nullable
-          : loading as bool,
+          : cameraEnabled as bool,
     );
   }
 }

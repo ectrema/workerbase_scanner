@@ -22,9 +22,11 @@ class MainScreen extends ConsumerWidget {
       body: navigationShell,
       resizeToAvoidBottomInset: false,
       extendBody: true,
-      bottomNavigationBar: SafeArea(
-        child: Padding(
-          padding: const EdgeInsets.only(left: 24, right: 24, bottom: 24),
+      bottomNavigationBar: Container(
+        color: const Color(0xFFF2F3D3),
+        padding:
+            const EdgeInsets.only(left: 24, right: 24, bottom: 24, top: 12),
+        child: SafeArea(
           child: Padding(
             padding: EdgeInsets.only(left: 4, right: 4),
             child: Row(
@@ -39,7 +41,9 @@ class MainScreen extends ConsumerWidget {
                       duration: Duration(milliseconds: 200),
                       decoration: ShapeDecoration(
                         shape: StadiumBorder(),
-                        color: currentIndex == index ? Colors.white : null,
+                        color: currentIndex == index
+                            ? const Color(0xFFEEF321)
+                            : null,
                       ),
                       child: Padding(
                         padding: EdgeInsets.symmetric(vertical: 8),

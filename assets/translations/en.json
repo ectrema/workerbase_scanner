@@ -1,4 +1,5 @@
 {
   "home": "Home",
-  "history": "History"
+  "history": "History",
+  "cameraPermissionNotGranted": "Camera permission not granted, click here to request access"
 }
