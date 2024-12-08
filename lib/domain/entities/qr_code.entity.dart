@@ -4,7 +4,7 @@ import 'package:workerbase_scanner/data/storages/body/qr_code.body.dart';
 import 'package:workerbase_scanner/domain/entities/extensions/calendar.extension.dart';
 import 'package:workerbase_scanner/domain/entities/extensions/contact.extension.dart';
 
-export 'extensions/qr_code.extension.dart';
+export 'package:workerbase_scanner/domain/entities/extensions/qr_code.extension.dart';
 
 final class QrCodeEntity with EquatableMixin {
   final String qrCode;

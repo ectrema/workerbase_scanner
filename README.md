@@ -90,10 +90,11 @@ The following packages are used in the project:
 - Allow camera permissions if prompted.
 - Point your camera at the QR code to scan.
 
-### QR Code Generation
-- Navigate to the **Generate QR Code** tab.
+### QR Code Detail
+- Navigate to the detail screen of a QR Code.
+- Depends on the QR Code type, you can add an event to the calendar or save a contact or copy to the clipboard.
 
 ### Manage QR Codes
-- View and delete scanned/generated QR codes in the **History** section.
+- View and delete scanned QR codes in the **History** section.
 
 ---
