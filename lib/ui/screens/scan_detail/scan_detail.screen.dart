@@ -107,44 +107,50 @@ class _ScanDetailBody extends ConsumerState<ScanDetailScreen> {
                           textAlign: TextAlign.center,
                         ),
                       ),
-                      Column(
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: <Widget>[
-                          ElevatedButton(
-                            style: ElevatedButton.styleFrom(
-                              backgroundColor: const Color(0xFFEEF321),
-                            ),
-                            onPressed: () {
-                              Clipboard.setData(
-                                ClipboardData(text: state.qrCode!.qrCode),
-                              );
+                          Expanded(
+                            child: ElevatedButton(
+                              style: ElevatedButton.styleFrom(
+                                backgroundColor: const Color(0xFFEEF321),
+                              ),
+                              onPressed: () {
+                                Clipboard.setData(
+                                  ClipboardData(text: state.qrCode!.qrCode),
+                                );
 
-                              ScaffoldMessenger.of(context).showSnackBar(
-                                SnackBar(
-                                  content:
-                                      Text(LocaleKeys.copiedToClipboard.tr()),
+                                ScaffoldMessenger.of(context).showSnackBar(
+                                  SnackBar(
+                                    content:
+                                        Text(LocaleKeys.copiedToClipboard.tr()),
+                                  ),
+                                );
+                              },
+                              child: Text(
+                                LocaleKeys.copyToClipboard.tr(),
+                                style: TextStyle(
+                                  color: Colors.black,
                                 ),
-                              );
-                            },
-                            child: Text(
-                              LocaleKeys.copyToClipboard.tr(),
-                              style: TextStyle(
-                                color: Colors.black,
                               ),
                             ),
                           ),
-                          if (state.isLink)
-                            Padding(
-                              padding: const EdgeInsets.only(top: 8),
+                          if (state.hasAction) const SizedBox(width: 8),
+                          if (state.hasAction)
+                            Expanded(
                               child: ElevatedButton(
                                 style: ElevatedButton.styleFrom(
                                   backgroundColor: const Color(0xFFF2F3D3),
                                 ),
-                                onPressed: viewModel.openUrl,
+                                onPressed: viewModel.onActionTap,
                                 child: Text(
-                                  LocaleKeys.openTheLink.tr(),
+                                  state.hasCalendarEvent
+                                      ? LocaleKeys.addEventToCalendar.tr()
+                                      : LocaleKeys.openTheLink.tr(),
                                   style: TextStyle(
                                     color: Colors.black,
                                   ),
+                                  textAlign: TextAlign.center,
                                 ),
                               ),
                             ),

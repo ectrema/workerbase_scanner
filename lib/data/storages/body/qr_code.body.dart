@@ -1,5 +1,6 @@
 import 'package:json_annotation/json_annotation.dart';
 import 'package:workerbase_scanner/core/mixins/serializable.mixin.dart';
+import 'package:workerbase_scanner/data/storages/body/calendar_event.body.dart';
 
 part 'qr_code.body.g.dart';
 
@@ -13,11 +14,14 @@ class QrCodeLocalModel with SerializableMixin {
 
   final int format;
 
+  final CalendarEventLocalModel? calendarEvent;
+
   QrCodeLocalModel({
     required this.qrCode,
     required this.date,
     required this.type,
     required this.format,
+    this.calendarEvent,
   });
 
   static QrCodeLocalModel fromJson(Map<String, dynamic> json) =>

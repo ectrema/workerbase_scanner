@@ -60,6 +60,7 @@ class HomeViewModel extends _$HomeViewModel {
       date: DateTime.now(),
       type: scannedBarcode.type,
       format: scannedBarcode.format,
+      calendarEvent: scannedBarcode.calendarEvent,
     );
 
     await _qrCodeService.saveQrCode(qrCode);

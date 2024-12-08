@@ -2,6 +2,8 @@ import 'package:equatable/equatable.dart';
 import 'package:mobile_scanner/mobile_scanner.dart';
 import 'package:workerbase_scanner/data/storages/body/qr_code.body.dart';
 
+import 'extensions/calendar.extension.dart';
+
 export 'extensions/qr_code.extension.dart';
 
 final class QrCodeEntity with EquatableMixin {
@@ -13,11 +15,14 @@ final class QrCodeEntity with EquatableMixin {
 
   final BarcodeFormat format;
 
+  final CalendarEvent? calendarEvent;
+
   QrCodeEntity({
     required this.qrCode,
     required this.date,
     required this.type,
     required this.format,
+    this.calendarEvent,
   });
 
   factory QrCodeEntity.fromLocal(
@@ -28,6 +33,7 @@ final class QrCodeEntity with EquatableMixin {
       date: DateTime.parse(localModel.date),
       type: BarcodeType.fromRawValue(localModel.type),
       format: BarcodeFormat.fromRawValue(localModel.format),
+      calendarEvent: localModel.calendarEvent?.toEntity,
     );
   }
 
@@ -35,5 +41,8 @@ final class QrCodeEntity with EquatableMixin {
   List<Object?> get props => <Object?>[
         qrCode,
         date,
+        type,
+        format,
+        calendarEvent,
       ];
 }

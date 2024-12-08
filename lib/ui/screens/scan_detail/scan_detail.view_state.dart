@@ -1,4 +1,5 @@
 import 'package:copy_with_extension/copy_with_extension.dart';
+import 'package:mobile_scanner/mobile_scanner.dart';
 import 'package:workerbase_scanner/domain/entities/qr_code.entity.dart';
 import 'package:workerbase_scanner/ui/abstraction/view_state_abs.dart';
 
@@ -21,4 +22,12 @@ class ScanDetailState extends ViewStateAbs {
 
   @override
   List<Object?> get props => <Object?>[qrCode];
+}
+
+extension OnScanDetailState on ScanDetailState {
+  bool get hasCalendarEvent => qrCode?.type == BarcodeType.calendarEvent;
+
+  bool get hasContactInfo => qrCode?.type == BarcodeType.contactInfo;
+
+  bool get hasAction => isLink || hasCalendarEvent || hasContactInfo;
 }
