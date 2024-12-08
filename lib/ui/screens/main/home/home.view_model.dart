@@ -91,4 +91,12 @@ class HomeViewModel extends _$HomeViewModel {
     _subscription?.cancel();
     controller.dispose();
   }
+
+  Future<void> stopCamera() async {
+    await controller.stop();
+  }
+
+  Future<void> startCamera() async {
+    await controller.start();
+  }
 }

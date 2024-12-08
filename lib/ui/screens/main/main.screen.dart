@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
+import 'package:workerbase_scanner/ui/screens/main/home/home.view_model.dart';
 import 'package:workerbase_scanner/ui/screens/main/main.view_model.dart';
 import 'package:workerbase_scanner/ui/screens/main/main.view_state.dart';
 
@@ -35,7 +36,14 @@ class MainScreen extends ConsumerWidget {
                 2,
                 (int index) => Expanded(
                   child: GestureDetector(
-                    onTap: () => viewModel.onItemTapped(index, navigationShell),
+                    onTap: () {
+                      viewModel.onItemTapped(index, navigationShell);
+                      if (index == 1) {
+                        ref.read(homeViewModelProvider.notifier).stopCamera();
+                      } else {
+                        ref.read(homeViewModelProvider.notifier).startCamera();
+                      }
+                    },
                     child: AnimatedContainer(
                       margin: EdgeInsets.only(top: 4, bottom: 4),
                       duration: Duration(milliseconds: 200),
