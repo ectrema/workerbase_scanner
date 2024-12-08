@@ -52,5 +52,7 @@
 		<string>This app needs photos access to get QR code from photo library</string>
 		<key>NSCalendarsUsageDescription</key>
 		<string>This app needs calendar access to add calendar event</string>
+		<key>NSContactsUsageDescription</key>
+		<string>This app needs contacts access to add contact</string>
 	</dict>
 </plist>

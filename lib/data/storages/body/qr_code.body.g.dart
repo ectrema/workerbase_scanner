@@ -16,6 +16,10 @@ QrCodeLocalModel _$QrCodeLocalModelFromJson(Map<String, dynamic> json) =>
           ? null
           : CalendarEventLocalModel.fromJson(
               json['calendar_event'] as Map<String, dynamic>),
+      contactInfo: json['contact_info'] == null
+          ? null
+          : ContactInfoLocalModel.fromJson(
+              json['contact_info'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$QrCodeLocalModelToJson(QrCodeLocalModel instance) =>
@@ -25,4 +29,5 @@ Map<String, dynamic> _$QrCodeLocalModelToJson(QrCodeLocalModel instance) =>
       'type': instance.type,
       'format': instance.format,
       'calendar_event': instance.calendarEvent,
+      'contact_info': instance.contactInfo,
     };

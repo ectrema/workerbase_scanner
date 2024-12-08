@@ -11,5 +11,7 @@
   "typeOfQrCode": "Type of QR Code : {}",
   "formatOfQrCode": "Format of QR Code : {}",
   "anErrorOccurred": "An error occurred : {}",
-  "addEventToCalendar": "Add event to calendar"
+  "addEventToCalendar": "Add event to calendar",
+  "addContact": "Add contact",
+  "addedContact": "Added contact"
 }

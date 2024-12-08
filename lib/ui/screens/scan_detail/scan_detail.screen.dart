@@ -36,6 +36,7 @@ class _ScanDetailBody extends ConsumerState<ScanDetailScreen> {
     final Size size = MediaQuery.sizeOf(context);
 
     return Scaffold(
+      key: viewModel.scaffoldKey,
       appBar: AppBar(
         title: Text(LocaleKeys.scanDetail.tr()),
       ),
@@ -146,7 +147,9 @@ class _ScanDetailBody extends ConsumerState<ScanDetailScreen> {
                                 child: Text(
                                   state.hasCalendarEvent
                                       ? LocaleKeys.addEventToCalendar.tr()
-                                      : LocaleKeys.openTheLink.tr(),
+                                      : state.hasContactInfo
+                                          ? LocaleKeys.addContact.tr()
+                                          : LocaleKeys.openTheLink.tr(),
                                   style: TextStyle(
                                     color: Colors.black,
                                   ),

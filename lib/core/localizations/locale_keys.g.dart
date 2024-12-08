@@ -14,5 +14,7 @@ abstract class  LocaleKeys {
   static const formatOfQrCode = 'formatOfQrCode';
   static const anErrorOccurred = 'anErrorOccurred';
   static const addEventToCalendar = 'addEventToCalendar';
+  static const addContact = 'addContact';
+  static const addedContact = 'addedContact';
 
 }

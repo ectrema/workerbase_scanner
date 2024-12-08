@@ -27,7 +27,9 @@ class CodegenLoader extends AssetLoader{
   "typeOfQrCode": "Type of QR Code : {}",
   "formatOfQrCode": "Format of QR Code : {}",
   "anErrorOccurred": "An error occurred : {}",
-  "addEventToCalendar": "Add event to calendar"
+  "addEventToCalendar": "Add event to calendar",
+  "addContact": "Add contact",
+  "addedContact": "Added contact"
 };
 static const Map<String, Map<String,dynamic>> mapLocales = {"en": en};
 }
