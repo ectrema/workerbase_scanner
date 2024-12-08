@@ -58,6 +58,8 @@ class HomeViewModel extends _$HomeViewModel {
     final QrCodeEntity qrCode = QrCodeEntity(
       qrCode: scannedBarcode.rawValue!,
       date: DateTime.now(),
+      type: scannedBarcode.type,
+      format: scannedBarcode.format,
     );
 
     await _qrCodeService.saveQrCode(qrCode);

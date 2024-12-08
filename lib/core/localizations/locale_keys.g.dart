@@ -6,5 +6,12 @@ abstract class  LocaleKeys {
   static const cameraPermissionNotGranted = 'cameraPermissionNotGranted';
   static const qrCodeScanner = 'qrCodeScanner';
   static const scanDetail = 'scanDetail';
+  static const copyToClipboard = 'copyToClipboard';
+  static const openTheLink = 'openTheLink';
+  static const copiedToClipboard = 'copiedToClipboard';
+  static const historyIsEmpty = 'historyIsEmpty';
+  static const typeOfQrCode = 'typeOfQrCode';
+  static const formatOfQrCode = 'formatOfQrCode';
+  static const anErrorOccurred = 'anErrorOccurred';
 
 }

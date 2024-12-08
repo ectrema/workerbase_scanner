@@ -1,4 +1,5 @@
 import 'package:equatable/equatable.dart';
+import 'package:mobile_scanner/mobile_scanner.dart';
 import 'package:workerbase_scanner/data/storages/body/qr_code.body.dart';
 
 export 'extensions/qr_code.extension.dart';
@@ -8,9 +9,15 @@ final class QrCodeEntity with EquatableMixin {
 
   final DateTime date;
 
+  final BarcodeType type;
+
+  final BarcodeFormat format;
+
   QrCodeEntity({
     required this.qrCode,
     required this.date,
+    required this.type,
+    required this.format,
   });
 
   factory QrCodeEntity.fromLocal(
@@ -19,6 +26,8 @@ final class QrCodeEntity with EquatableMixin {
     return QrCodeEntity(
       qrCode: localModel.qrCode,
       date: DateTime.parse(localModel.date),
+      type: BarcodeType.fromRawValue(localModel.type),
+      format: BarcodeFormat.fromRawValue(localModel.format),
     );
   }
 

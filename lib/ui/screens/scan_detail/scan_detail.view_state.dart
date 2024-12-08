@@ -8,9 +8,16 @@ part 'scan_detail.view_state.g.dart';
 class ScanDetailState extends ViewStateAbs {
   final QrCodeEntity? qrCode;
 
-  const ScanDetailState({required this.qrCode}) : super();
+  final bool isLink;
 
-  ScanDetailState.initial() : qrCode = null;
+  const ScanDetailState({
+    required this.qrCode,
+    required this.isLink,
+  }) : super();
+
+  ScanDetailState.initial()
+      : qrCode = null,
+        isLink = false;
 
   @override
   List<Object?> get props => <Object?>[qrCode];

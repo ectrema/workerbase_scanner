@@ -28,6 +28,14 @@ class HistoryScreen extends ConsumerWidget {
         child: SafeArea(
           child: CustomScrollView(
             slivers: <Widget>[
+              if (state.savedQrCodes.isEmpty)
+                SliverFillRemaining(
+                  child: Center(
+                    child: Text(
+                      LocaleKeys.historyIsEmpty.tr(),
+                    ),
+                  ),
+                ),
               SliverPadding(
                 padding: const EdgeInsets.only(top: 16),
                 sliver: SliverList.builder(
@@ -82,7 +90,13 @@ class _QrCodeItem extends StatelessWidget {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: <Widget>[
-            Text(qrCode.qrCode),
+            Flexible(
+              child: Text(
+                qrCode.qrCode,
+                maxLines: 2,
+                overflow: TextOverflow.ellipsis,
+              ),
+            ),
             IconButton(
               onPressed: onDelete,
               icon: const Icon(Icons.delete),

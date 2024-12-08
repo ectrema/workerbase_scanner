@@ -19,7 +19,14 @@ class CodegenLoader extends AssetLoader{
   "history": "History",
   "cameraPermissionNotGranted": "Camera permission not granted, click here to request access",
   "qrCodeScanner": "QRCode Scanner",
-  "scanDetail": "Scan Detail"
+  "scanDetail": "Scan Detail",
+  "copyToClipboard": "Copy to clipboard",
+  "openTheLink": "Open the link",
+  "copiedToClipboard": "Copied to clipboard",
+  "historyIsEmpty": "Your history is empty, scan something!",
+  "typeOfQrCode": "Type of QR Code : {}",
+  "formatOfQrCode": "Format of QR Code : {}",
+  "anErrorOccurred": "An error occurred : {}"
 };
 static const Map<String, Map<String,dynamic>> mapLocales = {"en": en};
 }

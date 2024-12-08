@@ -5,5 +5,7 @@ extension QrCodeEntityExtension on QrCodeEntity {
   QrCodeLocalModel get toLocal => QrCodeLocalModel(
         qrCode: qrCode,
         date: date.toIso8601String(),
+        type: type.rawValue,
+        format: format.rawValue,
       );
 }

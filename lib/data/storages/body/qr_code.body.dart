@@ -9,9 +9,15 @@ class QrCodeLocalModel with SerializableMixin {
 
   final String date;
 
+  final int type;
+
+  final int format;
+
   QrCodeLocalModel({
     required this.qrCode,
     required this.date,
+    required this.type,
+    required this.format,
   });
 
   static QrCodeLocalModel fromJson(Map<String, dynamic> json) =>
